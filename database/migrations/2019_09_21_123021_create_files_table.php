@@ -19,7 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('title');
             $table->text('overview');
             $table->timestamps();
-            $table->foreign('user_id')
+            $table->foreign('user_id')->unsigned()
                   ->references('id')
                   ->on('users')
                   ->onDelete('cascade');
