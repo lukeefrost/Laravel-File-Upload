@@ -74,8 +74,13 @@
 
 @section('scripts')
   <script>
-    var zone = new Dropzone('#file', {
-      url: "{{ route('upload') }}"
+    var zone = new Dropzone('#file',
+      createImageThumbnails: false,
+      addRemoveLinks: true,
+      url: "{{ route('upload') }}",
+      headers: {
+        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
+      }
     });
   </script>
 @endsection
