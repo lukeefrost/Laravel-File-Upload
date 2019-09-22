@@ -7,3 +7,11 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Dropzone
+@import '~dropzone/dist/min/dropzone.min.css';
+
+.dropzone {
+  margin-bottom: 20px;
+  min-height: auto;
+}

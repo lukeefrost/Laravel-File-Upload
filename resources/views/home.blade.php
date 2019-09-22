@@ -10,6 +10,15 @@
                 <div class="panel-body">
                   <form method="POST" action="{{ route('file.upload') }}" label="{{ __('Upload') }}">
                     {{ csrf_field() }}
+
+                    <div class="row">
+                      <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('File Upload') }}</label>
+                        <div class="col-md-6">
+                          <div id="file" class="dropzone"></div>
+                        </div>
+                    </div>
+                    <br>
+
                     <div class="row">
                       <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('Title') }}</label>
                         <div class="col-md-6">
@@ -61,4 +70,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+  <script>
+    var zone = new Dropzone('#file', {
+      url: "{{ route('upload') }}"
+    });
+  </script>
 @endsection
